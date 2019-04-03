@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+<nav>
+    <ul>
+        <li class="menu_accueil"><a href= "{% url 'index' %}">Accueil</a>
+          <ul class="submenu">
+            {% for article in last_five %}
+                <li><a href="{% url 'index' %}#{{ article.id }}">{{article.program_ref.name}}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="menu_applis"><a href="{% url 'bibliotheque' %}">Applis</a>
+            <ul class="submenu">
+                <li><a href="{% url 'bibliotheque' %}">Bibliothèque</a></li>
+            </ul>
+        </li>
+        <li class="menu_contact"><a href="{% url 'contact' %}">Contact</a>
+          <ul class="submenu">
+          </ul>
+        </li>
+        <li class="menu_a_propos"><a href="{% url 'a_propos' %}">A propos</a>
+          <ul class="submenu">
+          </ul>
+        </li>
+        <li class="menu_perso"><a href="#">Espace personnel</a>
+            <ul class="submenu">
+                <li><a href="{% url 'personal_space' %}">Mon Espace Personnel</a></li>
+                <li><a href="{% url 'login' %}">Connexion</a></li>
+                <li><a href="{% url 'inscription' %}">Inscription</a></li>
+                <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>

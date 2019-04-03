@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block nom_de_page %} Simple Trainer | Accueil {% endblock %}
+
+{% block content %}
+    <div class="articles">
+        {% for article in article %}
+           <p id="{{article.id}}" class="entete-date">{{article.program_ref.created_at|date:"d F Y"}} -- {{article.program_ref.name}}</p>
+           <img src= "{{ article.program_ref.image.url }}" alt="{{article.program_ref.image.url}}"/>
+           <pre>{{article.content|linebreaks}}</pre>
+        {% empty %}
+            <p>Aucun article disponible</p>
+        {% endfor %}
+    </div>
+{% endblock %}

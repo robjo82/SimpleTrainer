@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block titre %}Espace personnel{% endblock %}
+
+{% block content %}
+{% if ass.provider == 'facebook' %}
+{% else %}
+<div class="personal_informations">
+    <p class="entete">Informations Personnelles</p>
+    {% if profil.avatar == "" or "" %}
+    <img src="{% static 'images/non_logged_avatar.jpg' %}">
+    {% else %}
+    <img src= "{{profil.avatar.url}}" alt="photo de profil" />
+    {% endif %}
+    <p>Pseudo : {{user.username}}</p>
+    <p>Prénom : {{user.first_name}}</p>
+    <p>Nom : {{user.last_name}}</p>
+    <p>Pays : {{profil.country}}</p>
+    <p>Ville : {{profil.town}}</p>
+    <p>Code Postal : {{profil.postal_code }}</p>
+    <p>Numéro de téléphone : 0{{profil.phone_number}}</p>
+</div>
+<div class="account_informations">
+    <p class="entete">Informations sur le compte</p>
+</div>
+<div class="site_activity">
+    <p class="entete">Activité sur le site</p>
+</div>
+<p class="edit_button_top"><a href="#">Modifier</a></p>
+<p class="edit_button_bottom"><a href="#">Modifier</a></p>
+{% endif %}
+{% endblock %}

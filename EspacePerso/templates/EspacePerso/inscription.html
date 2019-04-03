@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+
+{% block titre %}Inscription{% endblock %}
+
+{% block content%}
+{% if envoi %}<p>Votre inscription a bien été prise en compte, </p>
+{% else %}
+<form action="{% url 'inscription'%}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Valider" />
+</form>
+<a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+
+{% endif %}
+
+    
+{% endblock %}
+

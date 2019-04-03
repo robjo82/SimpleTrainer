@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% block nom_de_page %} Simple Trainer {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    </head>
+    <body>
+        {% include 'layouts/_nav.html' %}
+        <h1>{% block titre %}Simple Trainer{% endblock %}</h1>
+        {% block content %}{% endblock %}
+        {% include 'layouts/_footer.html' %}
+    </body>
+</html>

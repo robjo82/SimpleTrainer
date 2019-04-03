@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html' %}
+
+{% block titre %}Connexion{% endblock %}
+
+{% block content %}
+{% if error %}
+<p><strong>Ooops, Impossible de se connecter ! Mot de passe ou nom d'utilisateur incorrect ! Veuillez réessayer !</strong></p>
+{% endif %}
+
+{% if user.is_authenticated %}
+<p>Vous êtes connecté, {{user.username}} !</p>
+{% else %}
+<form method="post" action="." class="login">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Se connecter" />
+</form>
+<div class="social-buttons">
+    <button class="Google_button">
+        <a href="{% url 'social:begin' 'google-oauth2' %}">Se connecter avec un compte Google</a>
+    </button>
+    <button class="Github_button">
+        <a href="{% url 'social:begin' 'github' %}">Se connecter avec un compte GitHub</a>
+    </button>
+    <button class="Facebook_button">
+        <a href="{% url 'social:begin' 'facebook' %}">Se connecter avec un compte Facebook</a>
+    </button>
+    <button class="Instagram_button">
+        <a href="{% url 'social:begin' 'instagram' %}">Se connecter avec un compte Instagram</a>
+    </button>
+    <button class="Linkedin_button">
+        <a href="{% url 'social:begin' 'instagram' %}">Se connecter avec un compte Linkedin</a>
+    </button>
+</div>
+
+{% endif %}
+{% endblock %}
