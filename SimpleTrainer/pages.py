@@ -19,16 +19,16 @@ def contact (request):
 def a_propos (request):
     return render (request, 'pages/a_propos.html', {'last_five' : last_five})
 
-def handler404 (request):
+def handler404 (request, exeception):
     return render (request, 'erreurs/404.html', {'last_five' : last_five}, status=404)
 
 def handler500 (request):
     return render (request, 'erreurs/500.html', {'last_five' : last_five}, status=500)
 
-def handler403 (request):
+def handler403 (request, exeception):
     return render (request, 'erreurs/403.html', {'last_five':last_five}, status=403)
 
-def handler400 (request):
+def handler400 (request, exeception):
     return render (request, 'erreurs/400.html', {'last_five':last_five}, status=400)
 
 def menu (request):
