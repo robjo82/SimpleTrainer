@@ -25,5 +25,11 @@ def handler404 (request):
 def handler500 (request):
     return render (request, 'erreurs/500.html', {'last_five' : last_five}, status=500)
 
+def handler403 (request):
+    return render (request, 'erreurs/403.html', {'last_five':last_five}, status=403)
+
+def handler400 (request):
+    return render (request, 'erreurs/400.html', {'last_five':last_five}, status=400)
+
 def menu (request):
     return render (request, 'layouts/_nav.html', {'last_five' : last_five})

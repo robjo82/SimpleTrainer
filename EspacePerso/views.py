@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from bibliotheque.models import Article
 from . import models
 from .models import Profil
@@ -40,5 +40,5 @@ def connect (request) :
 
 @login_required
 def personal_space (request):
-    profil = Profil.objects.get(user_id = request.user.id)
+    profil = get_object_or_404(Profil, user_id = request.user.id)
     return render (request, 'EspacePerso/personal_space.html', {'last_five' : last_five, "profil" : profil})

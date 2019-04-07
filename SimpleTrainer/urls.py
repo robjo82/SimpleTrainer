@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 
 handler404 = 'SimpleTrainer.pages.handler404'
 handler500 = 'SimpleTrainer.pages.handler500'
+handler403 = 'SimpleTrainer.pages.handler403'
+handler400 = 'SimpleTrainer.pages.handler400'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
