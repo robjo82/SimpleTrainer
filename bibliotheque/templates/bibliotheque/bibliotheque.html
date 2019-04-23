@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block titre %}Bibliotheque{% endblock %}
+
+{% block content %}
+<div class="trier_filtrer">
+    <p>Trier</p>
+    <p>Filtrer</p>
+</div>
+{% for stat in stats %}
+<div>
+    <p class="program_title">{{stats.programs_ref.name}}</p>
+    <p class="program_description">{{stats.programs_ref.description}}</p>
+    <p class="program_download">{{stats.download_number}}{% static images/download_logo %}</p>
+    <p class="program_favorite">{{stats.favorite_number}}</p>
+    <p class="program_avarage_rating">{{stats.avarage_rating}} / 10</p>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block title %} Simple Trainer | Bibliotheque {% endblock %}
