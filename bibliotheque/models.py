@@ -9,6 +9,8 @@ class Program (models.Model):
     updated_at = models.DateTimeField (auto_now = True, auto_now_add=False)
     image = models.ImageField (upload_to = 'images', null=True)
     download_file = models.FileField (upload_to = 'executables', null=True)
+    slug = models.SlugField (default="programme_{}".format(id))
+    youtube_code = models.TextField(null=True)
      
     def __str__(self):
         return self.name

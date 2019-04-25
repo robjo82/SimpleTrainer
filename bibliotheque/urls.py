@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.bibliotheque, name='bibliotheque'),
+    path('notice/<slug:slug>', views.notice, name='notice'),
 ]    

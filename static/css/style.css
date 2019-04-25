@@ -427,3 +427,88 @@ form{
     font-family: cursive;
     z-index: 4;
 }
+
+.program_table{
+    position: relative;
+    top: 250px;
+}
+
+.trier_filtrer{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    border: 2px solid grey;
+    padding: 10px;
+    background-color: #e1e1e1;
+    margin: none;
+}
+
+.trier_filtrer p{
+    display: inline;
+}
+
+.filtrer{
+    position: relative;
+    left: 80%;
+}
+
+.trier{
+    position: relative;
+    left: 10%;
+}
+
+.program_case{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    border: 2px solid grey;
+    padding: 10px;
+    background-color: #e1e1e1;
+    margin: none;
+    height: 150px;
+}
+
+.program_case img{
+    max-width: 15px;
+}
+
+.program_title{
+    font-size: 80px;
+    position: relative;
+    left: 10%;
+    display: inline;
+    top: 10px;
+    font-family: serif;
+}
+
+.program-title a{
+    text-decoration: none;
+}
+
+.program_description{
+    position: relative;
+    top: 10px;
+    max-width: 60%;
+    font-family: fantasy;
+}
+
+.program_download{
+    display: inline;
+    position: relative;
+    top: -130px;
+    left: 85%;
+}
+
+.program_favorite{
+    display: block;
+    position: relative;
+    top: -130px;
+    left: 85%;
+}
+
+.program_avarage_rating{
+    display: block;
+    position: relative;
+    top: -130px;
+    left: 85%;
+}
