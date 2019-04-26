@@ -14,27 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from django.conf.urls import url, include, handler404, handler500
-from . import pages
+from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-handler404 = 'SimpleTrainer.pages.handler404'
-handler500 = 'SimpleTrainer.pages.handler500'
-handler403 = 'SimpleTrainer.pages.handler403'
-handler400 = 'SimpleTrainer.pages.handler400'
-
+handler404 = 'SimpleTrainer.views.handler404'
+handler500 = 'SimpleTrainer.views.handler500'
+handler403 = 'SimpleTrainer.views.handler403'
+handler400 = 'SimpleTrainer.views.handler400'
+views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', pages.index, name='index'),
-    path('contact', pages.contact, name='contact'),
-    path('a_propos', pages.a_propos, name='a_propos'),
+    path('', views.index, name='index'),
+    path('contact', views.contact, name='contact'),
+    path('a_propos', views.a_propos, name='a_propos'),
     path('bibliotheque/', include('bibliotheque.urls')),
     path('espace_perso/', include('EspacePerso.urls')),
     path('auth/', include('social_django.urls', namespace='social')),
     
-    path('menu', pages.menu, name='menu'),
+    path('menu', views.menu, name='menu'),
+    #url(r'^test/(?P<id>[0-9]+)$', views.test)
+    #re_path('test/(?P<id>[0-9]+)$', views.test)
 ]
 
 

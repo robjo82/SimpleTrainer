@@ -4,5 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.bibliotheque, name='bibliotheque'),
-    path('notice/<slug:slug>', views.notice, name='notice'),
+    path(, views.notice, name='notice'),
 ]    
+
+#(?P<slug>[-a-zA-Z0-9_]+)$

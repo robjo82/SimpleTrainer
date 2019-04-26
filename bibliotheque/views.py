@@ -8,6 +8,5 @@ def bibliotheque (request):
     stats = models.Stat.objects.all()
     return render (request, 'bibliotheque/bibliotheque.html', {'programs' : programs, 'stats' : stats, 'last_five' : last_five})
 
-def notice (request, slug):
-	program = models.Program.objects.get(slug = slug)
-	return render (request, 'bibliotheque/notice.html', {'last_five' : last_five, 'program' : program})    
+def notice (request, id):
+	return render (request, 'bibliotheque/notice.html', {'last_five' : last_five, 'program' : Program.objects.get(slug = slug)})    
