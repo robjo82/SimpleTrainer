@@ -15,10 +15,10 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ('program_ref', 'name', 'content')
 
 class StatAdmin(admin.ModelAdmin):
-    list_display = ('program_ref', 'download_number', 'favorite_number', 'avarage_rating')
-    list_filter = ('program_ref', 'download_number', 'favorite_number', 'avarage_rating')
+    list_display = ('program_ref', 'download_number')
+    list_filter = ('program_ref', 'download_number')
     ordering = ('program_ref', )
-    search_fields = ('program_ref', 'download_number', 'favorite_number', 'avarage_rating')
+    search_fields = ('program_ref', 'download_number')
 
 class GradeAdmin (admin.ModelAdmin):
     list_display = ('program_ref', 'note')

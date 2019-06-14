@@ -1,9 +1,19 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 
-{% block titre %}Bibliotheque{% endblock %}
+{% block titre %}{{program.name}}{% endblock %}
 
 {% block content %}
+<p>Clique ici pour télécharger le fichier : <a href="{{program.download_file}}" download="{{program.download_file}}">{{program.name}}</a></p>
+<p>Regarde la vidéo ci-dessous pour apprendre à utiliser l'application !</p>
+<pre>
+    {{program.youtube_code}}
+</pre>
+<form action="{%url 'notice' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer"/>
+</form>
 
 {% endblock %}
 

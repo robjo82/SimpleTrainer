@@ -3,7 +3,7 @@
 {% block titre %}Inscription{% endblock %}
 
 {% block content%}
-{% if envoi %}<p>Votre inscription a bien été prise en compte, </p>
+{% if envoi %}<p>Votre inscription a bien été prise en compte, {{user.username}}</p>
 {% else %}
 <form action="{% url 'inscription'%}" method="post">
     {% csrf_token %}
