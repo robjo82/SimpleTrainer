@@ -9,10 +9,10 @@
 <pre>
     {{program.youtube_code}}
 </pre>
-<form action="{%url 'notice' %}" method="post">
+<form action = "{% url "notice" id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Envoyer"/>
+    <input type="submit" value="submit"/>
 </form>
 
 {% endblock %}

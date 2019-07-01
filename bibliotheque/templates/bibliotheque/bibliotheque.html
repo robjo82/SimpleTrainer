@@ -11,7 +11,7 @@
 	</div>
 	{% for stats in stats %}
 	<div class="program_case">
-	    <p class="program_title"><a href="{% url 'notice' id=stats.program_ref.id %}">{{stats.program_ref.name}}</a></p>
+	    <p class="program_title"><a href="{% url 'notice' stats.program_ref.id %}">{{stats.program_ref.name}}</a></p>
 	    <p class="program_description">{{stats.program_ref.description}}</p>
 	    <p class="program_download">{{stats.download_number}} <img src="{% static 'images/download_logo.png' %}"></p>
 	    <p class="program_favorite">{{stats.favorite_number}} <img src="{% static 'images/favorite_logo.jpg' %}"></p>

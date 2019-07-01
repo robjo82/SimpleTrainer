@@ -5,5 +5,5 @@ from .models import Stat
 class StatForm(forms.ModelForm):
     class Meta:
         model = Stat
-        fields = '__all__'
+        exclude = ('program_ref', 'user_ref', 'download_number')
        

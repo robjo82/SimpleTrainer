@@ -15,7 +15,7 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ('program_ref', 'name', 'content')
 
 class StatAdmin(admin.ModelAdmin):
-    list_display = ('program_ref', 'download_number')
+    list_display = ('program_ref', 'download_number', 'user_ref')
     list_filter = ('program_ref', 'download_number')
     ordering = ('program_ref', )
     search_fields = ('program_ref', 'download_number')
