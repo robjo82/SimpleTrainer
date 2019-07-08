@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Program, Article, Stat, Grade
+from .models import Program, Article, Stat, Grade, OperatingSystem, UserFeedback
 
 class ProgramAdmin (admin.ModelAdmin):
     list_display = ('name', 'description', 'created_at', 'updated_at')
@@ -15,7 +15,7 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ('program_ref', 'name', 'content')
 
 class StatAdmin(admin.ModelAdmin):
-    list_display = ('program_ref', 'download_number', 'user_ref')
+    list_display = ('program_ref', 'download_number')
     list_filter = ('program_ref', 'download_number')
     ordering = ('program_ref', )
     search_fields = ('program_ref', 'download_number')
@@ -25,9 +25,22 @@ class GradeAdmin (admin.ModelAdmin):
     list_filter = ('program_ref', 'note')
     ordering = ('program_ref', )
     search_fields = ('program_ref', 'note')
-          
+
+class OperatingSystemAdmin (admin.ModelAdmin):
+    list_display = ('program_ref','Windows10', 'OldVersionsWindows', 'Linux', 'MacOS', 'IOS', 'WindowsPhone', 'Android')
+    list_filter = ('program_ref','Windows10', 'OldVersionsWindows', 'Linux', 'MacOS', 'IOS', 'WindowsPhone', 'Android')
+    ordering = ('program_ref', )
+    search_fields = ('program_ref', )
+
+class UserFeedbackAdmin(admin.ModelAdmin):
+    list_display = ('program_ref', 'user_ref') 
+    list_filter = ('program_ref', 'user_ref') 
+    ordering = ('program_ref', )
+    search_fields = ('program_ref', )          
 
 admin.site.register (Program, ProgramAdmin)
 admin.site.register (Article, ArticleAdmin)
 admin.site.register (Stat, StatAdmin)
 admin.site.register (Grade, GradeAdmin)
+admin.site.register (OperatingSystem, OperatingSystemAdmin)
+admin.site.register (UserFeedback, UserFeedbackAdmin)

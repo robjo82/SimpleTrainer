@@ -12,7 +12,10 @@ class Program (models.Model):
     download_file = models.FileField (upload_to = 'executables', null=True)
     slug = models.SlugField (default="programme_{}".format(id))
     youtube_code = models.TextField(null=True)
-     
+
+    stat_ref = models.OneToOneField('Stat', on_delete = models.CASCADE, null=True)
+    operating_system_ref = models.OneToOneField('OperatingSystem', on_delete = models.CASCADE, null=True) 
+
     def __str__(self):
         return self.name
  
@@ -29,10 +32,29 @@ class Grade (models.Model):
     program_ref = models.ForeignKey (Program, on_delete = models.CASCADE)
     note = models.DecimalField (max_digits = 3, decimal_places = 1, default = 5)
     
+class OperatingSystem (models.Model):
+    program_ref = models.ForeignKey (Program, on_delete = models.CASCADE, null=True)
+    Windows10 = models.BooleanField (default=True)
+    OldVersionsWindows = models.BooleanField (default=True)
+    Linux = models.BooleanField (default=True)
+    MacOS = models.BooleanField (default=True)
+    Android = models.BooleanField (default=True)
+    IOS = models.BooleanField (default=True)
+    WindowsPhone = models.BooleanField (default=True)
+
+    def __str__(self):
+        return "Systèmes d'exploitations sur lesquels le programme {} fonctionne.".format(self.program_ref)
+
 class Stat (models.Model):
     program_ref = models.ForeignKey(Program, on_delete = models.CASCADE, null=True)
-    user_ref = models.ForeignKey(Profil, on_delete = models.CASCADE, null=True)
     download_number = models.IntegerField(default = 0)
+
+    def __str__(self):
+        return "Stat du programme {}".format(self.program_ref)
+
+class UserFeedback (models.Model):
+    user_ref = models.ForeignKey(Profil, on_delete = models.CASCADE, null=True)
+    program_ref = models.ForeignKey (Program, on_delete = models.CASCADE, null = True)
     overall_site_note = models.IntegerField (default = 5, verbose_name='note générale attibuée au site')
     site_accessibility = models.IntegerField (default = 5, verbose_name='accessibilité du site')
     site_usefulness = models.IntegerField (default = 5, verbose_name="facilité d'utilisation du site")

@@ -1,9 +1,9 @@
 #Coding: utf-8
 from django import forms 
-from .models import Stat
+from .models import UserFeedback
 
-class StatForm(forms.ModelForm):
+class UserFeedbackForm(forms.ModelForm):
     class Meta:
-        model = Stat
-        exclude = ('program_ref', 'user_ref', 'download_number')
+        model = UserFeedback
+        exclude = ('program_ref', 'user_ref')
        

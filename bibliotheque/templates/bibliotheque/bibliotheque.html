@@ -9,13 +9,35 @@
 	    <p class="trier">Trier</p>
 	    <p class="filtrer">Filtrer</p>
 	</div>
-	{% for stats in stats %}
+	{% for program in programs %}
 	<div class="program_case">
-	    <p class="program_title"><a href="{% url 'notice' stats.program_ref.id %}">{{stats.program_ref.name}}</a></p>
-	    <p class="program_description">{{stats.program_ref.description}}</p>
-	    <p class="program_download">{{stats.download_number}} <img src="{% static 'images/download_logo.png' %}"></p>
-	    <p class="program_favorite">{{stats.favorite_number}} <img src="{% static 'images/favorite_logo.jpg' %}"></p>
-	    <p class="program_avarage_rating">{{stats.avarage_rating}} / 10</p>
+	    <p class="program_title"><a href="{% url 'notice' program.id %}">{{program.name}}</a></p>
+	    <p class="program_description">{{program.description}}</p>
+	    <p class="program_download"># <img src="{% static 'images/download_logo.png' %}"></p>
+	    <p class="operating_system">
+	    	{% if program.operating_system_ref.Windows10 == True %}
+	    	<img src="{% static "images/Windows10logo.png" %}"/>
+	    	{% endif %}
+	    	{% if program.operating_system_ref.OldVersionsWindows %}
+	    	<img src="{% static "images/Windowslogo.png" %}"/>
+	    	{% endif %}
+	    	{% if program.operating_system_ref.MacOS %}
+	    	<img src="{% static "images/MacOSlogo.png" %}"/>
+	    	{% endif %}
+	    	{% if program.operating_system_ref.Linux %}
+	    	<img src="{% static "images/Linuxlogo.png" %}"/>
+	    	{% endif %}
+	    	{% if program.operating_system_ref.WindowsPhone %}
+	    	<img src="{% static "images/windowsphonelogo.png" %}"/>
+	    	{% endif %}
+	    	{% if program.operating_system_ref.Android %}
+	    	<img src="{% static "images/androidlogo.png" %}">
+	    	{% endif %}
+	    	{% if program.operating_system_ref.IOS %}
+	    	<img src="{% static "images/iOSlogo.png" %}">
+	    	{% endif %}
+	    </p>
+	    <p class="program_avarage_rating"># / 10</p>
 	</div>
 </div>
 {% endfor %}
