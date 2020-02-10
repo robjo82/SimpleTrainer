@@ -1,0 +1,15 @@
+{
+    "python.pythonPath": "/home/robin/Documents/programmation/simpletrainer_venv/bin/python3",
+    "window.zoomLevel": 2,
+    "workbench.startupEditor": "NouveauFichier",
+    "workbench.colorTheme": "Predawn",
+    "workbench.settings.editor": "json",
+    "workbench.settings.openDefaultSettings": true,
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "code-runner.executorMap": {
+        "python": "$pythonPath -u $fullFileName"
+    },
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.showExecutionMessage": false,
+}
