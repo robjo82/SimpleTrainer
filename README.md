@@ -13,7 +13,7 @@ Eventually, I envisioned Simple Trainer as a website, a platform where coaches c
 
 The entire journey, warts and all, can be seen on my GitHub repository. A shoutout to Jason Champagne, whose Python tutorials were a godsend.
 
-#Version française
+# Version française
 À 13 ans, deux de mes passions se sont croisées : le basket et la technologie. C'est ainsi que Simple Trainer a vu le jour.
 
 Je jouais au basket depuis sept ans au SACB, mon club local dans le Sud-Ouest de la France. Mais je n'étais pas seulement un joueur ; j'entraînais également les équipes plus jeunes et commençais à obtenir des certifications d'entraîneur—bien que théoriquement, il fallait attendre d'avoir 16 ans.
